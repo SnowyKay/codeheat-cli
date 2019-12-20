@@ -6,9 +6,10 @@ from github import Github
 import github3
 import os, sys, argparse, textwrap, requests, datetime, operator
 
-"""CODEHEAT RUNS FROM SEPTEMBER 10TH, 2018 TO FEBRUARY 1ST, 2019"""
+"""CODEHEAT RUNS FROM SEPTEMBER 15TH, 2019 TO FEBRUARY 2ND, 2020"""
 now = datetime.datetime.now()
-CODEHEAT_START, CODEHEAT_END = datetime.datetime(now.year, 9, 10), datetime.datetime(now.year + 1, 2, 1)
+CODEHEAT_START, CODEHEAT_END = datetime.datetime(2019, 9, 15), datetime.datetime(2020, 2, 2) # Previously datetime.datetime(now.year, 9, 10), datetime.datetime(now.year + 1, 2, 1) 
+print(CODEHEAT_START);
 
 ORG_NAME = 'fossasia'
 REPOS =  [["connfa-android", "open-event-wsgen", "open-event-frontend", "open-event-organizer-android", "open-event-attendee-android", "open-event-ios", "open-event-legacy", "open-event-scraper", "open-event-server", "open-event-orga-iOS", "open-event-theme", "event-collect", "open-event-droidgen", "open-event"],
@@ -166,7 +167,7 @@ def worker(g, org, repos):
                 authors.append((commit.commit.author.name, commit.commit.author.date))
     return authors
 
-if CODEHEAT_START < datetime.datetime(now.year, now.month, now.day) < CODEHEAT_START:
+if CODEHEAT_START < datetime.datetime(now.year, now.month, now.day) < CODEHEAT_END: #previously CODEHEAT_START < datetime.datetime(now.year, now.month, now.day) < CODEHEAT_START which defaulted to False always
     answers = prompt(questions)
     all_contributors = worker(g, ORG, REPOS[2]) + ['meilix'] + worker(g, ORG, REPOS[0]) + ['open_event'] + worker(g, ORG, REPOS[1]) + ['pslab'] + worker(g, ORG, REPOS[3]) + ['phimpme'] + worker(g, ORG, REPOS[4]) + ['susper'] + worker(g, ORG, REPOS[5]) + ['badgeyay'] + worker(g, ORG, REPOS[6]) + ['yaydoc']
     # meilix, openevent, pslab, phimpme, susper, badgeyay, yaydoc list
