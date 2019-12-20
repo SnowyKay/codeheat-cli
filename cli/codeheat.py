@@ -8,11 +8,11 @@ import os, sys, argparse, textwrap, requests, datetime, operator
 
 """CODEHEAT RUNS FROM SEPTEMBER 15TH, 2019 TO FEBRUARY 2ND, 2020"""
 now = datetime.datetime.now()
-month = int(str(now).split('-')[1])
-if month >= 9:
-    start_year = int(str(now).split('-')[0])
+
+if now.month >= 9:
+    start_year = now.year
 else:
-    start_year = int(str(now).split('-')[0]) - 1
+    start_year = now.year - 1
 CODEHEAT_START, CODEHEAT_END = datetime.datetime(start_year, 9, 15), datetime.datetime(start_year+1, 2, 2) # Previously datetime.datetime(now.year, 9, 10), datetime.datetime(now.year + 1, 2, 1) 
 
 
