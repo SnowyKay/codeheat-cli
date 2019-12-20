@@ -8,8 +8,13 @@ import os, sys, argparse, textwrap, requests, datetime, operator
 
 """CODEHEAT RUNS FROM SEPTEMBER 15TH, 2019 TO FEBRUARY 2ND, 2020"""
 now = datetime.datetime.now()
-CODEHEAT_START, CODEHEAT_END = datetime.datetime(2019, 9, 15), datetime.datetime(2020, 2, 2) # Previously datetime.datetime(now.year, 9, 10), datetime.datetime(now.year + 1, 2, 1) 
-print(CODEHEAT_START);
+month = int(str(now).split('-')[1])
+if month >= 9:
+    start_year = int(str(now).split('-')[0])
+else:
+    start_year = int(str(now).split('-')[0]) - 1
+CODEHEAT_START, CODEHEAT_END = datetime.datetime(start_year, 9, 15), datetime.datetime(start_year+1, 2, 2) # Previously datetime.datetime(now.year, 9, 10), datetime.datetime(now.year + 1, 2, 1) 
+
 
 ORG_NAME = 'fossasia'
 REPOS =  [["connfa-android", "open-event-wsgen", "open-event-frontend", "open-event-organizer-android", "open-event-attendee-android", "open-event-ios", "open-event-legacy", "open-event-scraper", "open-event-server", "open-event-orga-iOS", "open-event-theme", "event-collect", "open-event-droidgen", "open-event"],
