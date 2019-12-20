@@ -7,6 +7,7 @@ import github3
 import os, sys, argparse, textwrap, requests, datetime, operator
 
 """CODEHEAT RUNS FROM SEPTEMBER 15TH, 2019 TO FEBRUARY 2ND, 2020""" #Previous edition RAN from 10th Sept 2018 to 1st Feb 2019
+
 now = datetime.datetime.now()
 CODEHEAT_START, CODEHEAT_END = datetime.datetime(2019, 9, 15), datetime.datetime(2020, 2, 2) # Previously datetime.datetime(now.year, 9, 10), datetime.datetime(now.year + 1, 2, 1) 
 print(CODEHEAT_START);
