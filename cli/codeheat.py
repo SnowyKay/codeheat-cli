@@ -3,10 +3,11 @@
 from __future__ import print_function, unicode_literals
 from PyInquirer import style_from_dict, Token, prompt, Separator, Validator, ValidationError
 from github import Github
-import github3
+import github3 
 import os, sys, argparse, textwrap, requests, datetime, operator
 
-"""CODEHEAT RUNS FROM SEPTEMBER 15TH, 2019 TO FEBRUARY 2ND, 2020"""
+"""CODEHEAT RUNS FROM SEPTEMBER 15TH, 2019 TO FEBRUARY 2ND, 2020""" #Previous edition RAN from 10th Sept 2018 to 1st Feb 2019
+
 now = datetime.datetime.now()
 
 if now.month >= 9:
